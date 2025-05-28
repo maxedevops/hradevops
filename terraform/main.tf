@@ -59,7 +59,7 @@ resource "random_id" "suffix" {
 }
 
 resource "aws_ecs_service" "hra_service" {
-  name            = "hra-service-${random_id.suffix.hex}""
+  name            = "hra-service-${random_id.suffix.hex}"
   cluster         = aws_ecs_cluster.hra_cluster.id
   task_definition = aws_ecs_task_definition.hra_task.arn
   desired_count   = 1
