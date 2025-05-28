@@ -26,14 +26,14 @@ jobs:
         docker push 195074685960.dkr.ecr.us-east-1.amazonaws.com/hra-app:latest
 
     - name: Login to ECR
-      run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <account_id>.dkr.ecr.us-east-1.amazonaws.com
+      run: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 195074685960.dkr.ecr.us-east-1.amazonaws.com
 
     - name: Push image to ECR
       run: |
-        docker push <account_id>.dkr.ecr.us-east-1.amazonaws.com/hra-app
+        docker push 195074685960.dkr.ecr.us-east-1.amazonaws.com/hra-app
 
     - name: Terraform Apply
       run: |
         cd terraform
         terraform init
-        terraform apply -auto-approve -var="ecr_image_url=<account_id>.dkr.ecr.us-east-1.amazonaws.com/hra-app"
+        terraform apply -auto-approve -var="ecr_image_url=<195074685960.dkr.ecr.us-east-1.amazonaws.com/hra-app"
