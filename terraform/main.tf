@@ -68,7 +68,7 @@ resource "aws_ecs_service" "hra_service" {
 }
 
 resource "aws_iam_role" "ecs_task_execution" {
-  name = "ecsTaskExecutionRole"
+  name = "hraEcsTaskExecutionRole"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
