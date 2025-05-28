@@ -33,6 +33,9 @@ jobs:
       run: |
         docker push 195074685960.dkr.ecr.us-east-1.amazonaws.com/hra-app
 
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v2
+
     - name: Terraform Apply
       run: |
         cd terraform
