@@ -40,4 +40,4 @@ jobs:
       run: |
         cd terraform
         terraform init
-        terraform apply -auto-approve -var="ecr_image_url=<195074685960.dkr.ecr.us-east-1.amazonaws.com/hra-app"
+        terraform apply -auto-approve -var="ecr_image_url=195074685960.dkr.ecr.us-east-1.amazonaws.com/hra-app:latest"
